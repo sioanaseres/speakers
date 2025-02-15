@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use 'breakpoints' as *;
+
+$grid-columns:12;
+$grid-gaps:(
+    '0':0,
+    '1':10px,
+    '2':20px,
+    '3':30px
+);
+
+$layout-values: flex-start, flex-end, center, space-between, space-around ; 
+
+// base layout
+
+@include xs{
+    .container{
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .row{
+        display: flex;
+        flex-flow: row wrap;
+    
+    }
+}
+
+@include md{
+    .container{
+        padding: 0 20px;
+    }
+}
+
+
+// justify content classes
+
+@each $val in $layout-values{
+    .justify-#{$val}{
+        justify-content: $val;
+    }
+}

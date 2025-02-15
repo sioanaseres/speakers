@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: "Red Hat Display", serif;
+  background-color: #fff;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-white {
+  color: #fff;
+}
+
+@media (min-width: 320px) {
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .section .wrapper {
+    max-width: 800px;
+    padding: 0 0.75rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section .wrapper h1 {
+    font-size: 3rem;
+  }
+  .section .wrapper .speakers__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 64px;
+    margin: 0 auto;
+    margin-top: 3.75rem;
+    list-style: none;
+  }
+  .section .wrapper .speakers__container .speakers__container-item {
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+  }
+  .section .wrapper .speakers__container .speakers__container-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .section .wrapper .speakers__container .speakers__container-item .speakers__photo-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 148px;
+    height: 148px;
+    background: url("/images/Shadow Colour.png") no-repeat center center/cover;
+  }
+  .section .wrapper .speakers__container .speakers__container-item .speakers__photo-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 30px solid #fff;
+    border-right: 30px solid transparent;
+  }
+  .section .wrapper .speakers__container .speakers__container-item .speakers__photo-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: 30px solid #fff;
+    border-left: 30px solid transparent;
+  }
+  .section .wrapper .speakers__container .speakers__container-item .speakers__info .speakers__name {
+    font-weight: 900;
+    margin-top: 0.75rem;
+  }
+  .section .wrapper .speakers__container .speakers__container-item .speakers__info .speakers__role {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    line-height: 2;
+  }
+}
+@media (min-width: 720px) {
+  .section {
+    height: 100vh;
+  }
+}
+@media (min-width: 320px) {
+  .modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  .modal .modal__container {
+    width: 500px;
+    height: 500px;
+    background-color: #000;
+    max-width: 100%;
+    position: absolute;
+    top: 10%;
+    transition: transform 0.3s ease;
+    transform: translateY(-20px);
+  }
+  .modal .modal__container .modal__header {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 3px solid #8E71F4;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal .modal__container .modal__header .modal__button--close {
+    font-weight: 900;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+  }
+  .modal .modal__container .modal__header .modal__button--close:hover, .modal .modal__container .modal__header .modal__button--close:focus {
+    color: #00D15F;
+  }
+  .modal .modal__container .modal__content {
+    margin-top: 0.75rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 420px;
+    width: 500px;
+    max-width: 100%;
+  }
+  .modal .modal__container .modal__content p {
+    padding: 0.75rem 1.5rem;
+  }
+  .modal .modal__container .modal__content::-webkit-scrollbar {
+    width: 8px;
+  }
+  .modal .modal__container .modal__content::-webkit-scrollbar-track {
+    background-color: #000;
+    border-radius: 6px;
+  }
+  .modal .modal__container .modal__content::-webkit-scrollbar-thumb {
+    background-color: #00D15F;
+    border-radius: 6px;
+  }
+}
+@media (min-width: 960px) {
+  .modal .modal__container {
+    top: 20%;
+  }
+}

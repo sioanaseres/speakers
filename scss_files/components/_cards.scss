@@ -1,0 +1,93 @@
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+@include xs{
+    .section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    
+        .wrapper{
+            max-width: 800px;
+            padding: 0 $base-padding;
+            margin: 0 auto;
+            text-align: center;
+    
+            h1{
+                font-size: $font-size-md;
+            }
+        
+            .speakers__container{
+              
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                column-gap: 32px;
+                row-gap: 64px;
+                margin: 0 auto;
+                margin-top: $base-margin*5;
+                list-style: none;
+               
+                .speakers__container-item{
+                    cursor: pointer;
+                    transition: box-shadow 0.5s ease;
+    
+                    &:hover{
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    }
+    
+                    .speakers__photo-wrapper{
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        width: 148px;
+                        height: 148px;
+                        background: url('/images/Shadow\ Colour.png') no-repeat center center / cover;
+                    
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            border-bottom: 30px solid #fff;
+                            border-right: 30px solid transparent;
+                        }
+                    
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            border-top: 30px solid #fff;
+                            border-left: 30px solid transparent;
+                        }
+                    }
+        
+                    .speakers__info{
+                        .speakers__name{
+                            font-weight: 900;
+                            margin-top: $base-margin;
+                        }
+                        .speakers__role{
+                            font-size: $font-size-xs;
+                            margin-top: $base-margin;
+                            line-height:2 ;
+                        }
+                    }
+                }
+               
+            }
+        }
+        
+    }
+}
+
+
+
+@include md{
+    .section{
+        height: 100vh;
+    }
+}
