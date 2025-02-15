@@ -1,0 +1,18 @@
+{
+  "name": "sass_tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "> Please note that **you may not** (a) use the provided by Veeam to you materials in any other matter except for performing the testing task, (b) modify in any manner these materials (except to the extent such prohibition is expressly prohibited by law), (c) use these materials in violation of any applicable laws or regulations, or (d) make available these materials on any type of public sharing website or forums, or (e) provide to any third party the results of performing the testing task. Veeam Software Group GmbH is the sole copyright owner of all provided to you materials.",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-purgecss": "^7.0.2",
+    "gulp-sass": "^6.0.0",
+    "node-sass-magic-importer": "^5.3.3",
+    "sass": "^1.84.0"
+  }
+}
